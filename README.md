@@ -1,4 +1,4 @@
-### This is a mobile implementation via the XML API offered up at "BoardGameGeek.com":http://boardgamegeek.com.  Goal is to make browsing basic data of users and games easier from a variety of mobile devices.  
+### This is a mobile implementation via the XML API offered up at [BoardGameGeek.com](http://boardgamegeek.com).  Goal is to make browsing basic data of users and games easier from a variety of mobile devices.  
 
 MG- I have left out styling of the app and more advanced functionality until I get the code cleaned up.  
 
