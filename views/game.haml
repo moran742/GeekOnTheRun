@@ -1,0 +1,38 @@
+!!!
+%html
+  %head
+    %title= @title
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+      %link{:href => "http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css", :rel => "stylesheet"}/
+      %script{:src => "http://code.jquery.com/jquery-1.7.1.min.js"}
+      %script{:src => "http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"}
+
+  %body
+
+    %div{"data-role" => "page", "data-dom-cache" => "true"}
+      
+      %div{"data-role" => "header", "data-position" => "inline"}
+        %a{"data-icon" => "back", "data-rel" => "back", "data-theme" => "b"} Back
+        %h1= @name
+
+      %div{"data-role" => "content"}
+        %img{:src => "#{@thumbnail}"}
+        %br Game ID: #{@id}
+        Image ID: #{@imageId}
+        %p
+        Year Published: #{@yearPublished}
+        %br Number of Players: #{@minPlayers} - #{@maxPlayers}
+        Playing Time: #{@playingTime} minutes
+        %br Mininum Age: #{@minAge} and up
+        %p
+        %strong Rankings
+        %br Number of User Rakings: #{@usersRated} 
+        Average Rating:  #{@averageRating}
+        %br Boardgame Rank: #{@boardGameRank}
+        %p
+        %strong Stats
+        %br Owned: #{@owned}
+        Trading: #{@trading}
+        %br Wanting: #{@wanting}
+        Wishing: #{@wishing}
+        %p #{@description}

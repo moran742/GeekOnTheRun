@@ -1,0 +1,59 @@
+!!!
+%html
+  %head
+    %title= @title
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+      %link{:href => "http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css", :rel => "stylesheet"}/
+      %script{:src => "http://code.jquery.com/jquery-1.7.1.min.js"}
+      %script{:src => "http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"}
+
+  %body
+
+    %div{"data-role" => "page"}
+      
+      %div{"data-role" => "header", "data-position" => "inline"}
+        %a{"data-icon" => "back", "data-rel" => "back", "data-theme" => "b"} Back
+        %h1 The Hotness
+
+      %div{"data-role" => "content"}
+        %ol{"data-role" => "listview", "data-theme" =>"b"}
+          %li
+            %a{:href => "/game/#{@games[0]["id"]}"}= @games[0]["name"]
+          %li
+            %a{:href => "/game/#{@games[1]["id"]}"}= @games[1]["name"]
+          %li
+            %a{:href => "/game/#{@games[2]["id"]}"}= @games[2]["name"]
+          %li
+            %a{:href => "/game/#{@games[3]["id"]}"}= @games[3]["name"]
+          %li
+            %a{:href => "/game/#{@games[4]["id"]}"}= @games[4]["name"]
+          %li
+            %a{:href => "/game/#{@games[5]["id"]}"}= @games[5]["name"]
+          %li
+            %a{:href => "/game/#{@games[6]["id"]}"}= @games[6]["name"]
+          %li
+            %a{:href => "/game/#{@games[7]["id"]}"}= @games[7]["name"]
+          %li
+            %a{:href => "/game/#{@games[8]["id"]}"}= @games[8]["name"]
+          %li
+            %a{:href => "/game/#{@games[9]["id"]}"}= @games[9]["name"]
+          %li
+            %a{:href => "/game/#{@games[10]["id"]}"}= @games[10]["name"]
+          %li
+            %a{:href => "/game/#{@games[11]["id"]}"}= @games[11]["name"]
+          %li
+            %a{:href => "/game/#{@games[12]["id"]}"}= @games[12]["name"]
+          %li
+            %a{:href => "/game/#{@games[13]["id"]}"}= @games[13]["name"]
+          %li
+            %a{:href => "/game/#{@games[14]["id"]}"}= @games[14]["name"]
+          %li
+            %a{:href => "/game/#{@games[15]["id"]}"}= @games[15]["name"]
+          %li
+            %a{:href => "/game/#{@games[16]["id"]}"}= @games[16]["name"]
+          %li
+            %a{:href => "/game/#{@games[17]["id"]}"}= @games[17]["name"]
+          %li
+            %a{:href => "/game/#{@games[18]["id"]}"}= @games[18]["name"]
+          %li
+            %a{:href => "/game/#{@games[19]["id"]}"}= @games[19]["name"]

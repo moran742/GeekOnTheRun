@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %title= @title
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+      %link{:href => "http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css", :rel => "stylesheet"}/
+      %script{:src => "http://code.jquery.com/jquery-1.7.1.min.js"}
+      %script{:src => "http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"}
+
+  %body
+
+    %div{"data-role" => "page"}
+      
+      %div{"data-role" => "header"}
+        %h1 Mobile BGG
+
+      %div{"data-role" => "content"}
+        %ul{"data-filter" => "false", "data-inset" => "true", "data-role" => "listview", "data-theme" => "b"}
+          %li
+            %a{:href => "/hot"} The Hotness
+          %li
+            %a{:href => "/gamesearch"} The Games
+          %li
+            %a{:href => "/usersearch"} The Users
+          %li
+            %a{:href => "/about"} About
