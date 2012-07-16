@@ -16,23 +16,24 @@
         %h1= @name
 
       %div{"data-role" => "content"}
-        %img{:src => "#{@thumbnail}"}
-        %br Game ID: #{@id}
-        Image ID: #{@imageId}
+        %img{:src => "#{@game.thumbnail}"}
+        %br Game ID: #{@game.game_id}
+        Image ID: #{@game.image_id}
         %p
-        Year Published: #{@yearPublished}
-        %br Number of Players: #{@minPlayers} - #{@maxPlayers}
-        Playing Time: #{@playingTime} minutes
-        %br Mininum Age: #{@minAge} and up
+        Year Published: #{@game.year_published}
+        %br Number of Players: #{@game.min_players} - #{@game.max_players}
+        Playing Time: #{@game.playing_time} minutes
+        %br Mininum Age: #{@game.min_age} and up
         %p
         %strong Rankings
-        %br Number of User Rakings: #{@usersRated} 
-        Average Rating:  #{@averageRating}
-        %br Boardgame Rank: #{@boardGameRank}
+        %br Number of User Rakings: #{@game.users_rated} 
+        Average Rating:  #{@game.average_rating}
         %p
         %strong Stats
-        %br Owned: #{@owned}
-        Trading: #{@trading}
-        %br Wanting: #{@wanting}
-        Wishing: #{@wishing}
-        %p #{@description}
+        %br Owned: #{@game.owned}
+        Trading: #{@game.trading}
+        %br Wanting: #{@game.wanting}
+        Wishing: #{@game.wishing}
+        %p 
+        %strong Description
+        %br #{@game.description}

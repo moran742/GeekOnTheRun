@@ -2,6 +2,8 @@ require 'sinatra'
 require 'haml'
 require 'open-uri'
 require 'nokogiri'
+require_relative 'module.rb'
+
 
 get '/' do
 	@title = "Mobile BGG"
@@ -15,30 +17,7 @@ end
 
 get '/game/*' do
 	@title = "Mobile BGG"
-  @gameId = params[:splat].first
-  @url = "http://boardgamegeek.com/xmlapi2/thing?type=boardgame&stats=1&id=" + @gameId
-  @gameDetailsInXml = Nokogiri::XML(open(@url))
-
-  # Fill Variables with Game Data
-  @id = @gameDetailsInXml.xpath("//item/@id").text
-  @thumbnail = @gameDetailsInXml.xpath("//thumbnail").text
-  @imageId = @thumbnail.match(/\d+/).to_s
-  @image = @gameDetailsInXml.xpath("//image").text
-  @name = @gameDetailsInXml.xpath("//name/@value").text
-  @description = @gameDetailsInXml.xpath("//description").text
-  @yearPublished = @gameDetailsInXml.xpath("//yearpublished/@value").text
-  @minPlayers = @gameDetailsInXml.xpath("//minplayers/@value").text
-  @maxPlayers = @gameDetailsInXml.xpath("//maxplayers/@value").text
-  @playingTime = @gameDetailsInXml.xpath("//playingtime/@value").text
-  @minAge = @gameDetailsInXml.xpath("//minage/@value").text
-  @usersRated = @gameDetailsInXml.xpath("//statistics/ratings/usersrated/@value").text
-  @averageRating = @gameDetailsInXml.xpath("//statistics/ratings/average/@value").text
-  @boardGameRank = @gameDetailsInXml.xpath("//statistics/ratings/ranks/rank/@value").text
-  @owned = @gameDetailsInXml.xpath("//statistics/ratings/owned/@value").text
-  @trading = @gameDetailsInXml.xpath("//statistics/ratings/trading/@value").text
-  @wanting = @gameDetailsInXml.xpath("//statistics/ratings/wanting/@value").text
-  @wishing = @gameDetailsInXml.xpath("//statistics/ratings/wishing/@value").text
-
+  @game = BoardGameGeek::Game.find params[:splat].first
   haml :game
 end
 
