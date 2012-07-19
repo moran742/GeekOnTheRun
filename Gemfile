@@ -6,4 +6,5 @@ gem 'nokogiri', '1.5.0'
 
 group :test do
   gem 'rack-test'
+  gem 'capybara'
 end

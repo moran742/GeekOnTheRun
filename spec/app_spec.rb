@@ -1,17 +1,19 @@
 require 'spec_helper'
+require 'capybara'
+require 'capybara/dsl'
 
 describe BoardGameGeek::App do
 
-  include Rack::Test::Methods
+  include Capybara
 
-  def app
-    BoardGameGeek::App
+  def setup
+    Capybara.app = BoardGameGeek::App
   end
 
   describe '/game/:id' do
     it 'has the correct game id' do
-      get '/game/57830'
-      last_response.body.must_match /57830/
+      visit '/game/57830'
+      page.has_content?('57830').must_equal true
     end
   end
 
